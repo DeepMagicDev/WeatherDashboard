@@ -7,18 +7,142 @@ const pageTitle = "Weather Dashboard";
 <Layout pageTitle={pageTitle}>
 	<Main>
 		<section
-			class="card card-bordered mt-12 mx-auto md:max-w-[700px] lg:max-w-[900px] bg-base-100 shadow-xl flex flex-col"
+			class="card my-6 mx-auto md:max-w-[700px] lg:max-w-[900px] bg-base-100 shadow-xl flex flex-col"
 		>
+			<!-- begin main weather card -->
 			<div class="card-body">
 				<h2 class="card-title">Today's Weather</h2>
+				<!-- begin temp and icon card -->
 				<div class="card w-full bg-base-200 shadow-xl flex flex-row p-4">
 					<div class="flex-grow">
-						<p class="text-9xl text-center">61</p>
+						<p class="text-info text-9xl text-center">61</p>
 					</div>
 					<div class="divider divider-horizontal divider-primary py-4"></div>
 					<div class="flex-grow">
 						<p class="text-9xl text-center">61</p>
 					</div>
+				</div>
+
+				<!-- end temp and icon card -->
+				<!-- begin desciption card -->
+
+				<div class="card w-full bg-base-200 shadow-xl p-4">
+					<h2 class="card-title text-lg">Description</h2>
+					<div class="card-body">
+						<p class="text-info">
+							Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+							Laboriosam eaque unde est cupiditate voluptatem possimus quisquam
+							repudiandae quas ducimus debitis, accusantium tempora architecto
+							corrupti magnam?
+						</p>
+					</div>
+				</div>
+				<!-- begin container div -->
+
+				<div class="flex flex-col md:flex-row gap-2">
+					<!-- begin humidity card -->
+
+					<div class="card w-full bg-base-200 shadow-xl p-4 flex-1">
+						<h2 class="card-title text-lg">Humidity</h2>
+						<div class="card-body items-center text-center">
+							<p class="text-8xl text-info">35%</p>
+						</div>
+					</div>
+
+					<!-- end humidity card -->
+
+					<!-- begin wind direction card -->
+
+					<div class="card w-full bg-base-200 shadow-xl p-4 flex-1">
+						<h2 class="card-title text-lg">Wind Direction</h2>
+						<div class="card-body items-center text-center">
+							<p class="text-8xl text-info">NW</p>
+						</div>
+					</div>
+
+					<!-- end wind direction card -->
+				</div>
+			</div>
+		</section>
+		<section
+			class="card my-6 mx-auto md:max-w-[700px] lg:max-w-[900px] bg-base-100 shadow-xl flex"
+		>
+			<div class="card-body">
+				<h2 class="card-title">Forecast</h2>
+				<!-- begin div container for week days -->
+				<div class="flex gap-2">
+					<!-- begin week day boxes -->
+
+					<div class="card flex-1 bg-base-200 shadow-xl flex flex-col p-2">
+						<div class="text-center">
+							<p class="text-4xl">35</p>
+						</div>
+						<div class="text-center">
+							<p class="text-sm text-info">35</p>
+						</div>
+					</div>
+
+					<div class="card flex-1 bg-base-200 shadow-xl flex flex-col p-2">
+						<div class="text-center">
+							<p class="text-4xl">35</p>
+						</div>
+						<div class="text-center">
+							<p class="text-sm text-info">35</p>
+						</div>
+					</div>
+
+					<div class="card flex-1 bg-base-200 shadow-xl flex flex-col p-2">
+						<div class="text-center">
+							<p class="text-4xl">35</p>
+						</div>
+						<div class="text-center">
+							<p class="text-sm text-info">35</p>
+						</div>
+					</div>
+
+					<div class="card flex-1 bg-base-200 shadow-xl flex flex-col p-2">
+						<div class="text-center">
+							<p class="text-4xl">35</p>
+						</div>
+						<div class="text-center">
+							<p class="text-sm text-info">35</p>
+						</div>
+					</div>
+
+					<div class="card flex-1 bg-base-200 shadow-xl flex flex-col p-2">
+						<div class="text-center">
+							<p class="text-4xl">35</p>
+						</div>
+						<div class="text-center">
+							<p class="text-sm text-info">35</p>
+						</div>
+					</div>
+
+					<div class="card flex-1 bg-base-200 shadow-xl flex flex-col p-2">
+						<div class="text-center">
+							<p class="text-4xl">35</p>
+						</div>
+						<div class="text-center">
+							<p class="text-sm text-info">35</p>
+						</div>
+					</div>
+
+					<div class="card flex-1 bg-base-200 shadow-xl flex flex-col p-2">
+						<div class="text-center">
+							<p class="text-4xl">35</p>
+						</div>
+						<div class="text-center">
+							<p class="text-sm text-info">35</p>
+						</div>
+					</div>
+
+
+
+
+
+
+
+
 				</div>
 			</div>
 		</section>
