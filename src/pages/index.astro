@@ -1,12 +1,26 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Main from '../components/Main.astro'
-const pageTitle = "Weather Dashboard"
+import Layout from "../layouts/Layout.astro";
+import Main from "../components/Main.astro";
+const pageTitle = "Weather Dashboard";
 ---
-<Layout pageTitle={pageTitle}>
 
+<Layout pageTitle={pageTitle}>
 	<Main>
-	<h1 class="text-primary">Hello</h1>
+		<section
+			class="card card-bordered mt-12 mx-auto md:max-w-[700px] lg:max-w-[900px] bg-base-100 shadow-xl flex flex-col"
+		>
+			<div class="card-body">
+				<h2 class="card-title">Today's Weather</h2>
+				<div class="card w-full bg-base-200 shadow-xl flex flex-row p-4">
+					<div class="flex-grow">
+						<p class="text-9xl text-center">61</p>
+					</div>
+					<div class="divider divider-horizontal divider-primary py-4"></div>
+					<div class="flex-grow">
+						<p class="text-9xl text-center">61</p>
+					</div>
+				</div>
+			</div>
+		</section>
 	</Main>
 </Layout>
-
