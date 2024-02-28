@@ -44,10 +44,12 @@
 </div>
 
 <script>
-	const searchInput = document.getElementById("form-input");
+	const form = document.getElementById("form-input");
 
-	searchInput.addEventListener("submit", (event) => {
+	form.addEventListener("submit", (event) => {
 		event.preventDefault();
+
+		const searchInput = document.getElementById("search-input");
 		const searchTerm = searchInput.value;
 		fetchWeatherData(searchTerm)
 			.then((weatherData) => {
