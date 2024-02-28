@@ -3,14 +3,14 @@
 		<a class="btn btn-ghost text-base md:text-xl">Weather DB</a>
 	</div>
 	<div class="flex-none gap-2">
-		<div class="form-control">
+		<form class="form-control">
 			<input
 				type="text"
 				placeholder="City"
 				id="search-input"
 				class="input input-bordered w-24 md:w-auto"
 			/>
-		</div>
+		</form>
 		<div class="">
 			<div tabindex="0" role="submit" class="btn btn-primary btn-circle">
 				<svg class=""
@@ -48,7 +48,13 @@ const searchInput = document.getElementById("search-input")
 
 searchInput.addEventListener('submit', (event) => {
 	event.preventDefault();
-	const searchTerm = serachInput.value;
+	const searchTerm = searchInput.value;
+	fetchWeatherData(searchTerm).then(weatherData => {
+		//use weatherData to update your UI here
+	})
+	,catch(error => {
+		 console.error('Error Fetching Data')
+	})
 });
 
 
