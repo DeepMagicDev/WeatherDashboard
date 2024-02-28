@@ -1,4 +1,4 @@
-<div class="navbar bg-base-100">
+<div class="navbar bg-base-200">
 	<div class="flex-1">
 		<a class="btn btn-ghost text-base md:text-xl">Weather DB</a>
 	</div>
@@ -7,11 +7,12 @@
 			<input
 				type="text"
 				placeholder="City"
+				id="search-input"
 				class="input input-bordered w-24 md:w-auto"
 			/>
 		</div>
 		<div class="">
-			<div tabindex="0" role="button" class="btn btn-primary btn-circle">
+			<div tabindex="0" role="submit" class="btn btn-primary btn-circle">
 				<svg class=""
 					fill="#000000"
 					version="1.1"
@@ -41,3 +42,32 @@
 		</div>
 	</div>
 </div>
+
+<script>
+const searchInput = document.getElementById("search-input")
+
+searchInput.addEventListener('submit', (event) => {
+	event.preventDefault();
+	const searchTerm = serachInput.value;
+});
+
+
+  async function fetchWeatherData(location) { 
+    const apiEndpoint = 'https://api.weatherapi.com/v1/current.json'; 
+    const apiKey = 'YOUR_WEATHERAPI_KEY'; 
+    
+    try {
+      const apiUrl = `${apiEndpoint}?key=${apiKey}&q=${location}`;
+      const response = await fetch(apiUrl); 
+
+      if (response.ok) {
+        const weatherData = await response.json(); 
+        return weatherData; 
+      } else {
+        throw new Error('API Error: Could not fetch data'); 
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error); 
+    }
+  }
+</script>
