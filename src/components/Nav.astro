@@ -51,10 +51,11 @@
 
 		const searchInput = document.getElementById("search-input") as HTMLInputElement;
 		const searchTerm = searchInput.value;
-		console.log('Fetching weather data for:', searchTerm);
+//		console.log('Fetching weather data for:', searchTerm);
 		fetchWeatherData(searchTerm)
 			.then((weatherData) => {
-				console.log('Fetched weather data:', weatherData)
+//				console.log('Fetched weather data:', weatherData)
+				document.dispatchEvent(new CustomEvent('weatherDataFetched', { detail: { weatherData } }));
 				//use weatherData to update your UI here
 			})
 			.catch((error) => {

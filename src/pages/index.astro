@@ -10,3 +10,16 @@ const pageTitle = "Weather Dashboard";
 		<WeatherWidget />
 	</Main>
 </Layout>
+
+
+<script>
+document.addEventListener('weatherDataFetched', function(event) {
+
+	const eventData = event.detail;
+
+	const dataDisplayElement = document.getElementById('tempNumber');
+	if (dataDisplayElement) {
+		dataDisplayElement.innerText = eventData.temp_f  
+	}
+})
+</script> 
