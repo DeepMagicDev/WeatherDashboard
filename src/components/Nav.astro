@@ -3,7 +3,7 @@
 		<a class="btn btn-ghost text-base md:text-xl">Weather DB</a>
 	</div>
 	<div class="flex-none gap-2">
-		<form id="form-input" class="form-control">
+		<form id="form-input" class="form-control flex-row gap-2">
 			<input
 				type="text"
 				placeholder="City"
@@ -11,7 +11,7 @@
 				class="input input-bordered w-24 md:w-auto"
 			/>
 			<div class="">
-				<div tabindex="0" role="submit" class="btn btn-primary btn-circle">
+				<button  role="button" class="btn btn-primary btn-circle" type="submit">
 					<svg
 						class=""
 						fill="#000000"
@@ -37,7 +37,7 @@
 						</g>
 					</svg>
 					<!-- <div class="w-10 rounded-full"></div> -->
-				</div>
+				</button>
 			</div>
 		</form>
 	</div>
@@ -49,7 +49,7 @@
 	form.addEventListener("submit", (event) => {
 		event.preventDefault();
 
-		const searchInput = document.getElementById("search-input");
+		const searchInput = document.getElementById("search-input") as HTMLInputElement;
 		const searchTerm = searchInput.value;
 		fetchWeatherData(searchTerm)
 			.then((weatherData) => {
