@@ -13,13 +13,17 @@ const pageTitle = "Weather Dashboard";
 
 
 <script>
+
+
 document.addEventListener('weatherDataFetched', function(event) {
+console.log('Recieved event detail:', event.detail)
 
-	const eventData = event.detail;
+	//temperature data
+	const temperature = event.detail.weatherData.current.temp_f;
+	document.getElementById('tempNumber').innerText = `${temperature}°`
 
-	const dataDisplayElement = document.getElementById('tempNumber');
-	if (dataDisplayElement) {
-		dataDisplayElement.innerText = eventData.temp_f  
-	}
+	//condition data
+const icon = event.detail.weatherData.current.condition.icon;
+	document.getElementById('iconSpace').innerText = icon
 })
 </script> 
