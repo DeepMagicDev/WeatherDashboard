@@ -11,19 +11,26 @@ const pageTitle = "Weather Dashboard";
 	</Main>
 </Layout>
 
-
 <script>
+	document.addEventListener("weatherDataFetched", function (event) {
+		console.log("Recieved event detail:", event.detail);
 
+		//temperature data
+		const temperature = event.detail.weatherData.current.temp_f;
+		document.getElementById("tempNumber").innerText = `${temperature}°`;
 
-document.addEventListener('weatherDataFetched', function(event) {
-console.log('Recieved event detail:', event.detail)
+		//condition data
+		let iconUrl = event.detail.weatherData.current.condition.icon;
 
-	//temperature data
-	const temperature = event.detail.weatherData.current.temp_f;
-	document.getElementById('tempNumber').innerText = `${temperature}°`
+		if (iconUrl.startsWith("//")) {
+			iconUrl = "https:" + iconUrl;
+		}
 
-	//condition data
-const icon = event.detail.weatherData.current.condition.icon;
-	document.getElementById('iconSpace').innerText = icon
-})
-</script> 
+	const iconElement =	document.getElementById("iconSpace");
+		//console.log('icon element', iconElement);
+		if (iconElement) {
+			iconElement.src = iconUrl;
+			iconElement.alt = "Current Weather Icon";
+		}
+	});
+</script>
