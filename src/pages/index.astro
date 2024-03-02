@@ -32,5 +32,16 @@ const pageTitle = "Weather Dashboard";
 			iconElement.src = iconUrl;
 			iconElement.alt = "Current Weather Icon";
 		}
+		//condition Text
+		const condText = event.detail.weatherData.current.condition.text;
+		document.getElementById("conditions").innerText = condText;
+
+		//humidity
+		const humText = event.detail.weatherData.current.humidity;
+		document.getElementById("humidity").innerText = `${humText}%`;
+
+		//wind direction
+		const direction = event.detail.weatherData.current.wind_dir;
+		document.getElementById("windDir").innerText = direction;
 	});
 </script>
